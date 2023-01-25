@@ -4,8 +4,12 @@ public class ArrayExamples {
 
   // Changes the input array to be in reversed order
   static void reverseInPlace(int[] arr) {
+    int[] reversedArray=new int[arr.length];
     for(int i = 0; i < arr.length; i += 1) {
-      arr[i] = arr[arr.length - i - 1];
+      reversedArray[i]=arr[arr.length-1-i];
+    }
+    for (int j=0; j<reversedArray.length; j++){
+      arr[j]=reversedArray[j];
     }
   }
 
@@ -14,8 +18,10 @@ public class ArrayExamples {
   static int[] reversed(int[] arr) {
     int[] newArray = new int[arr.length];
     for(int i = 0; i < arr.length; i += 1) {
-      arr[i] = newArray[arr.length - i - 1];
+      //arr[i] = newArray[arr.length - i - 1];
+      newArray[i]=arr[arr.length - i - 1];
     }
+    arr=newArray;
     return arr;
   }
 
