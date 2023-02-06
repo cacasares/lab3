@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +42,10 @@ public class FileExample {
 	static List<File> getFiles(File start) throws IOException {
 	  File f = start;
 	  List<File> result = new ArrayList<>();
-	  result.add(start);
+    // how to recursively searchfor (f : files){
+	  if (!start.isDirectory()){
+      result.add(start);
+    }
 	  if(f.isDirectory()) {
 	    File[] paths = f.listFiles();
 	    for(File subFile: paths) {
